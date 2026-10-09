@@ -1,0 +1,45 @@
+package org.chromium.net;
+
+import java.util.Date;
+import java.util.Set;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class ICronetEngineBuilder {
+    public abstract ICronetEngineBuilder addPublicKeyPins(String str, Set<byte[]> set, boolean z5, Date date);
+
+    public abstract ICronetEngineBuilder addQuicHint(String str, int i5, int i6);
+
+    public abstract ExperimentalCronetEngine build();
+
+    public ICronetEngineBuilder enableBrotli(boolean z5) {
+        return this;
+    }
+
+    public abstract ICronetEngineBuilder enableHttp2(boolean z5);
+
+    public abstract ICronetEngineBuilder enableHttpCache(int i5, long j5);
+
+    public ICronetEngineBuilder enableNetworkQualityEstimator(boolean z5) {
+        return this;
+    }
+
+    public abstract ICronetEngineBuilder enablePublicKeyPinningBypassForLocalTrustAnchors(boolean z5);
+
+    public abstract ICronetEngineBuilder enableQuic(boolean z5);
+
+    public abstract ICronetEngineBuilder enableSdch(boolean z5);
+
+    public abstract String getDefaultUserAgent();
+
+    public abstract ICronetEngineBuilder setExperimentalOptions(String str);
+
+    public abstract ICronetEngineBuilder setLibraryLoader(CronetEngine.Builder.LibraryLoader libraryLoader);
+
+    public abstract ICronetEngineBuilder setStoragePath(String str);
+
+    public ICronetEngineBuilder setThreadPriority(int i5) {
+        return this;
+    }
+
+    public abstract ICronetEngineBuilder setUserAgent(String str);
+}

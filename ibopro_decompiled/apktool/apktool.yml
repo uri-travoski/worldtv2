@@ -1,0 +1,22 @@
+version: 3.0.3
+apkFileName: ibopro.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 36
+versionInfo:
+  versionCode: 4
+  versionName: 4.5
+resourcesInfo:
+  packageId: 127
+doNotCompress:
+- arsc
+- gif
+- jpeg
+- ogg
+- png
+- webp
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm

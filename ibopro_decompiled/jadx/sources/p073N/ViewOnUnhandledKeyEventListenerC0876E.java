@@ -1,0 +1,13 @@
+package p073N;
+
+import android.view.KeyEvent;
+import android.view.View;
+
+/* JADX INFO: renamed from: N.E */
+/* JADX INFO: loaded from: classes.dex */
+public final /* synthetic */ class ViewOnUnhandledKeyEventListenerC0876E implements View.OnUnhandledKeyEventListener {
+    @Override // android.view.View.OnUnhandledKeyEventListener
+    public final boolean onUnhandledKeyEvent(View view, KeyEvent keyEvent) {
+        throw null;
+    }
+}

@@ -1,0 +1,43 @@
+.class public interface abstract LI0/M;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final d:Li2/f;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Li2/f;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x4
+
+    .line 4
+    invoke-direct {v0, v1}, Li2/f;-><init>(I)V
+
+    .line 5
+    .line 6
+    .line 7
+    sput-object v0, LI0/M;->d:Li2/f;
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract g()V
+.end method
+
+.method public abstract i()V
+.end method
+
+.method public abstract n(LI0/N;)V
+.end method
