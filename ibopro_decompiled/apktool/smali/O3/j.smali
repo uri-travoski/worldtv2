@@ -1362,96 +1362,87 @@
     move-result-object v13
 
     .line 618
-    new-instance v5, LR3/e;
+    new-instance v5, Lcom/ibpro/player/models/AppInfoModel$UrlModel;
 
-    .line 619
-    .line 620
-    invoke-virtual {p0}, Ld0/o;->i()Landroid/content/Context;
+    invoke-direct {v5}, Lcom/ibpro/player/models/AppInfoModel$UrlModel;-><init>()V
 
-    .line 621
-    .line 622
-    .line 623
+    iget-object v0, p0, LO3/j;->N0:Ljava/lang/String;
+
+    if-eqz v0, :cond_local_gen
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_local_id
+
+    :cond_local_gen
+    iget-object v0, p0, LO3/j;->I0:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
     move-result-object v0
 
-    .line 624
-    const/16 v1, 0x3e8
+    :cond_local_id
+    invoke-virtual {v5, v0}, Lcom/ibpro/player/models/AppInfoModel$UrlModel;->setId(Ljava/lang/String;)V
 
-    .line 625
-    .line 626
-    invoke-direct {v5, v0, v1}, LR3/e;-><init>(Landroid/content/Context;I)V
+    iget-object v0, p0, LO3/j;->K0:Ljava/lang/String;
 
-    .line 627
-    .line 628
-    .line 629
-    invoke-static {p1}, Lcom/bumptech/glide/c;->t(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 630
-    .line 631
-    .line 632
-    move-result-object v6
+    move-result-object v0
 
-    .line 633
-    new-instance p1, Ljava/util/ArrayList;
+    invoke-virtual {v5, v0}, Lcom/ibpro/player/models/AppInfoModel$UrlModel;->setName(Ljava/lang/String;)V
 
-    .line 634
-    .line 635
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    iget-object v0, p0, LO3/j;->O0:Ljava/lang/String;
 
-    .line 636
-    .line 637
-    .line 638
-    sget-object v0, LM3/k;->o:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 639
-    .line 640
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    .line 641
-    .line 642
-    .line 643
-    sget-object v0, LM3/k;->s:Ljava/lang/String;
+    invoke-virtual {v5, v0}, Lcom/ibpro/player/models/AppInfoModel$UrlModel;->setUrl(Ljava/lang/String;)V
 
-    .line 644
-    .line 645
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget v0, p0, LO3/j;->J0:I
 
-    .line 646
-    .line 647
-    .line 648
-    sget-object v0, LM3/k;->k:Ljava/lang/String;
+    const/4 v1, -0x1
 
-    .line 649
-    .line 650
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eq v0, v1, :cond_local_add
 
-    .line 651
-    .line 652
-    .line 653
-    sget v0, Lcom/ibpro/player/apps/LTVApp;->t:I
+    iget-object v1, p0, LO3/j;->I0:Ljava/util/List;
 
-    .line 654
-    .line 655
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0, v5}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 656
-    .line 657
-    .line 658
-    move-result-object p1
+    goto :goto_local_save
 
-    .line 659
-    move-object v7, p1
+    :cond_local_add
+    iget-object v0, p0, LO3/j;->I0:Ljava/util/List;
 
-    .line 660
-    check-cast v7, Ljava/lang/String;
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 661
-    .line 662
-    invoke-virtual/range {v5 .. v13}, LR3/e;->a(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :goto_local_save
+    iget-object v0, p0, LO3/j;->H0:Lcom/ibpro/player/models/AppInfoModel;
 
-    .line 663
-    .line 664
-    .line 665
-    iput-object p0, v5, LR3/e;->b:LR3/d;
+    iget-object v1, p0, LO3/j;->I0:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lcom/ibpro/player/models/AppInfoModel;->setResult(Ljava/util/List;)V
+
+    iget-object v0, p0, LO3/j;->F0:LP3/s;
+
+    iget-object v1, p0, LO3/j;->H0:Lcom/ibpro/player/models/AppInfoModel;
+
+    invoke-virtual {v0, v1}, LP3/s;->R(Lcom/ibpro/player/models/AppInfoModel;)V
+
+    iget-object v0, p0, LO3/j;->H0:Lcom/ibpro/player/models/AppInfoModel;
+
+    invoke-static {v0}, LS3/j;->v(Lcom/ibpro/player/models/AppInfoModel;)V
+
+    invoke-virtual {p0}, LO3/j;->J()V
 
     .line 666
     .line 667

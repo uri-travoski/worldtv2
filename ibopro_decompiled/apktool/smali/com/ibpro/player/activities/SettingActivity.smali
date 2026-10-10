@@ -1807,15 +1807,10 @@
 
     .line 228
     .line 229
-    iget-object p1, p0, Lcom/ibpro/player/activities/SettingActivity;->d0:Lcom/ibpro/player/models/AppInfoModel;
+    const-string p1, "https://raw.githubusercontent.com/uri-travoski/worldtv2-ibopro/main/version.txt"
 
-    .line 230
-    .line 231
-    invoke-virtual {p1}, Lcom/ibpro/player/models/AppInfoModel;->getApp_version()Ljava/lang/String;
+    invoke-static {p1}, LS3/j;->w(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 232
-    .line 233
-    .line 234
     move-result-object p1
 
     .line 235

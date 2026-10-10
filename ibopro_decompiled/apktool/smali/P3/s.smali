@@ -1960,19 +1960,49 @@
 .end method
 
 .method public final b()Lcom/ibpro/player/models/AppInfoModel;
-    .locals 3
+    .locals 4
 
-    iget-object v1, p0, LP3/s;->a:Lcom/google/gson/h;
+    const/4 v0, 0x0
 
-    const-class v2, Lcom/ibpro/player/models/AppInfoModel;
+    :try_start_0
+    iget-object v1, p0, LP3/s;->b:Landroid/content/SharedPreferences;
 
-    const-string v0, "{\"apk_link\":\"\",\"app_version\":\"4.5\",\"device_key\":\"520051\",\"expire_date\":\"2099-12-31\",\"is_google_pay\":false,\"is_trial\":2,\"lock\":0,\"mac_address\":\"75:74:e2:9e:be:3d\",\"parent_control\":\"0000\",\"parent_synced\":1,\"pin\":\"0000\",\"plan_id\":\"12345678\",\"price\":\"9.99\",\"urls\":[{\"id\":\"1\",\"name\":\"Demo\",\"url\":\"http://stocare.game-tv.org:8080/get.php?username\\u003dMegaIPTV\\u0026password\\u003dKp6fPgd4vb\\u0026type\\u003dm3u_plus\\u0026output\\u003dmpegts\"}],\"mac_registered\":true,\"android_testing\":{\"ibo\":true,\"vu\":false,\"payEnabled\":false,\"payPath\":\"\"}}"
+    const-string v2, "APP_INFO_MODEL"
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/gson/h;->b(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    const-string v3, ""
 
-    move-result-object v0
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast v0, Lcom/ibpro/player/models/AppInfoModel;
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    const-string v1, "{\"apk_link\":\"\",\"app_version\":\"4.5\",\"device_key\":\"520051\",\"expire_date\":\"2099-12-31\",\"is_google_pay\":false,\"is_trial\":2,\"lock\":0,\"mac_address\":\"75:74:e2:9e:be:3d\",\"parent_control\":\"0000\",\"parent_synced\":1,\"pin\":\"0000\",\"plan_id\":\"12345678\",\"price\":\"9.99\",\"urls\":[{\"id\":\"1\",\"name\":\"Demo\",\"url\":\"http://stocare.game-tv.org:8080/get.php?username\\u003dMegaIPTV\\u0026password\\u003dKp6fPgd4vb\\u0026type\\u003dm3u_plus\\u0026output\\u003dmpegts\"}],\"mac_registered\":true,\"android_testing\":{\"ibo\":true,\"vu\":false,\"payEnabled\":false,\"payPath\":\"\"}}"
+
+    :cond_1
+    iget-object v2, p0, LP3/s;->a:Lcom/google/gson/h;
+
+    const-class v3, Lcom/ibpro/player/models/AppInfoModel;
+
+    invoke-virtual {v2, v3, v1}, Lcom/google/gson/h;->b(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/ibpro/player/models/AppInfoModel;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v1
+
+    :catch_0
+    const/4 v0, 0x0
 
     return-object v0
 .end method

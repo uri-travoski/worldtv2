@@ -1483,7 +1483,7 @@
     .line 33
     .line 34
     .line 35
-    const-string p0, "dd/MM/yyyy"
+    const-string p0, "dd-MMM-yyyy"
 
     .line 36
     .line 37
@@ -2725,4 +2725,75 @@
     .line 115
     :goto_3
     return-void
+.end method
+
+.method public static w(Ljava/lang/String;)Ljava/lang/String;
+    .locals 5
+
+    const-string v0, "0"
+
+    :try_start_0
+    new-instance v1, Ljava/net/URL;
+
+    invoke-direct {v1, p0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/net/HttpURLConnection;
+
+    const/16 v2, 0x3a98
+
+    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+
+    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/io/BufferedReader;
+
+    new-instance v3, Ljava/io/InputStreamReader;
+
+    invoke-direct {v3, v1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    invoke-direct {v2, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    :goto_w0
+    invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_w0
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_w0
+
+    :cond_w0
+    invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_w1
+
+    :catch_0
+    move-exception v1
+
+    :goto_w1
+    return-object v0
 .end method

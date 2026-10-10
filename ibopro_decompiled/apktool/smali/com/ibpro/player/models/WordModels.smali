@@ -3416,7 +3416,7 @@
     .line 15
     :cond_1
     :goto_0
-    const-string v0, "Current playlist expires:"
+    const-string v0, "Expiry:"
 
     .line 16
     .line 17

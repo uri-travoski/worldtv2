@@ -131,16 +131,6 @@
 
     .line 24
     .line 25
-    invoke-static {}, LS3/j;->b()Z
-
-    .line 26
-    .line 27
-    .line 28
-    move-result v2
-
-    .line 29
-    if-eqz v2, :cond_0
-
     .line 30
     .line 31
     new-instance v0, LJ3/b0;
@@ -152,16 +142,7 @@
     .line 34
     .line 35
     .line 36
-    iget-object p1, p1, Lcom/ibpro/player/activities/SettingActivity;->d0:Lcom/ibpro/player/models/AppInfoModel;
-
-    .line 37
-    .line 38
-    invoke-virtual {p1}, Lcom/ibpro/player/models/AppInfoModel;->getApk_link()Ljava/lang/String;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p1
+    const-string p1, "https://github.com/uri-travoski/worldtv2-ibopro/releases/latest/download/WorldTV2.apk"
 
     .line 42
     filled-new-array {p1}, [Ljava/lang/String;

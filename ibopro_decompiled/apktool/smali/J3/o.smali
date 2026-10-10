@@ -688,88 +688,21 @@
     move-result-object v16
 
     .line 334
-    new-instance v8, LR3/e;
+    move-object/from16 v0, p0
 
-    .line 335
-    .line 336
+    iget-object v1, v0, LJ3/o;->k:Lcom/ibpro/player/activities/ChangePlaylistActivity;
+
+    iget-object v2, v0, LJ3/o;->j:Lcom/ibpro/player/models/AppInfoModel$UrlModel;
+
+    iput-object v2, v1, Lcom/ibpro/player/activities/ChangePlaylistActivity;->w0:Lcom/ibpro/player/models/AppInfoModel$UrlModel;
+
+    new-instance v2, Lorg/json/JSONObject;
+
+    invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
+
     const/16 v3, 0x7d0
 
-    .line 337
-    .line 338
-    invoke-direct {v8, v1, v3}, LR3/e;-><init>(Landroid/content/Context;I)V
-
-    .line 339
-    .line 340
-    .line 341
-    invoke-static {v2}, Lcom/bumptech/glide/c;->t(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    .line 342
-    .line 343
-    .line 344
-    move-result-object v9
-
-    .line 345
-    new-instance v2, Ljava/util/ArrayList;
-
-    .line 346
-    .line 347
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    .line 348
-    .line 349
-    .line 350
-    sget-object v3, LM3/k;->p:Ljava/lang/String;
-
-    .line 351
-    .line 352
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 353
-    .line 354
-    .line 355
-    sget-object v3, LM3/k;->t:Ljava/lang/String;
-
-    .line 356
-    .line 357
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 358
-    .line 359
-    .line 360
-    sget-object v3, LM3/k;->l:Ljava/lang/String;
-
-    .line 361
-    .line 362
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 363
-    .line 364
-    .line 365
-    sget v3, Lcom/ibpro/player/apps/LTVApp;->t:I
-
-    .line 366
-    .line 367
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    .line 368
-    .line 369
-    .line 370
-    move-result-object v2
-
-    .line 371
-    move-object v10, v2
-
-    .line 372
-    check-cast v10, Ljava/lang/String;
-
-    .line 373
-    .line 374
-    invoke-virtual/range {v8 .. v16}, LR3/e;->a(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 375
-    .line 376
-    .line 377
-    iput-object v1, v8, LR3/e;->b:LR3/d;
+    invoke-virtual {v1, v2, v3}, Lcom/ibpro/player/activities/ChangePlaylistActivity;->a(Lorg/json/JSONObject;I)V
 
     .line 378
     .line 379
