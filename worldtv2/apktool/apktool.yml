@@ -1,0 +1,22 @@
+version: 3.0.3
+apkFileName: worldtv.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 36
+versionInfo:
+  versionCode: 6
+  versionName: 4.7
+resourcesInfo:
+  packageId: 127
+doNotCompress:
+- arsc
+- gif
+- jpeg
+- ogg
+- png
+- webp
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm

@@ -1,4 +1,4 @@
 credentials.md
-ibopro_decompiled/ibopro-rebuilt-*.apk
-ibopro_decompiled/*-unsigned.apk
-ibopro_decompiled/*-aligned.apk
+worldtv2/*-unsigned.apk
+worldtv2/*-aligned.apk
+worldtv2/*.idsig
